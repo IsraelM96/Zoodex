@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3d1fa2ed3de44509a8d26b939f0390c6" Name="Diagram1">
+        <EntityTypeShape EntityType="Zoodex_Model.Analyses" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Zoodex_Model.Files" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Zoodex_Model.Logs" Width="1.5" PointX="5.25" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Zoodex_Model.Posts" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Zoodex_Model.Reptiles" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Zoodex_Model.ReptilesPosts" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Zoodex_Model.Roles" Width="1.5" PointX="6" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Zoodex_Model.Users" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Zoodex_Model.UsersRoles" Width="1.5" PointX="8.25" PointY="16.875" IsExpanded="true" />
+        <AssociationConnector Association="Zoodex_Model.FK_Analyses_Files" ManuallyRouted="false" />
+        <AssociationConnector Association="Zoodex_Model.FK_Analyses_Reptiles" ManuallyRouted="false" />
+        <AssociationConnector Association="Zoodex_Model.FK_Analyses_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Zoodex_Model.FK_Posts_Files" ManuallyRouted="false" />
+        <AssociationConnector Association="Zoodex_Model.FK_Reptiles_Files" ManuallyRouted="false" />
+        <AssociationConnector Association="Zoodex_Model.FK_Users_Files" ManuallyRouted="false" />
+        <AssociationConnector Association="Zoodex_Model.FK_Logs_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="Zoodex_Model.FK_ReptilesPosts_Posts" ManuallyRouted="false" />
+        <AssociationConnector Association="Zoodex_Model.FK_ReptilesPosts_Reptiles" ManuallyRouted="false" />
+        <AssociationConnector Association="Zoodex_Model.FK_UsersRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="Zoodex_Model.FK_UsersRoles_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

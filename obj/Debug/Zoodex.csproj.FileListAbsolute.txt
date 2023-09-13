@@ -1,0 +1,142 @@
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\Zoodex.dll.config
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\Zoodex.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\Zoodex.pdb
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\csc.exe
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\csc.exe.config
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\csc.rsp
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\csi.exe
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\csi.exe.config
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\csi.rsp
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\System.Buffers.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\System.Memory.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\vbc.exe
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\vbc.exe.config
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\vbc.rsp
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\VBCSCompiler.exe
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\Antlr3.Runtime.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\EntityFramework.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\EntityFramework.SqlServer.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\Newtonsoft.Json.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\System.Web.Helpers.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\System.Web.Mvc.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\System.Web.Optimization.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\System.Web.Razor.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\System.Web.WebPages.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\System.Web.WebPages.Razor.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\WebGrease.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\EntityFramework.xml
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\EntityFramework.SqlServer.xml
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\Newtonsoft.Json.xml
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\System.Web.Helpers.xml
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\System.Web.Mvc.xml
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\System.Web.Optimization.xml
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\System.Web.Razor.xml
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\System.Web.WebPages.xml
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\System.Web.WebPages.Razor.xml
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\Antlr3.Runtime.pdb
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\es\System.Web.Razor.resources.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\obj\Debug\Zoodex.csproj.CoreCompileInputs.cache
+C:\Users\Israel Martinez\Desktop\Zoodex\obj\Debug\Zoodex.csproj.CopyComplete
+C:\Users\Israel Martinez\Desktop\Zoodex\obj\Debug\Zoodex.dll
+C:\Users\Israel Martinez\Desktop\Zoodex\obj\Debug\Zoodex.pdb
+C:\Users\Israel Martinez\Desktop\Zoodex\obj\Debug\Zoodex.csproj.AssemblyReference.cache
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\Zoodex.dll.config
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\Zoodex.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\Zoodex.pdb
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\csc.exe
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\csc.exe.config
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\csc.rsp
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\csi.exe
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\csi.exe.config
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\csi.rsp
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\System.Buffers.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\System.Collections.Immutable.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\System.Memory.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\System.Numerics.Vectors.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\System.Reflection.Metadata.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\vbc.exe
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\vbc.exe.config
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\vbc.rsp
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\VBCSCompiler.exe
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\roslyn\VBCSCompiler.exe.config
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\Antlr3.Runtime.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\EntityFramework.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\EntityFramework.SqlServer.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\Microsoft.Web.Infrastructure.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\Newtonsoft.Json.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\System.Web.Helpers.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\System.Web.Mvc.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\System.Web.Optimization.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\System.Web.Razor.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\System.Web.WebPages.Deployment.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\System.Web.WebPages.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\System.Web.WebPages.Razor.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\WebGrease.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\EntityFramework.xml
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\EntityFramework.SqlServer.xml
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\Newtonsoft.Json.xml
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\System.Web.Helpers.xml
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\System.Web.Mvc.xml
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\System.Web.Optimization.xml
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\System.Web.Razor.xml
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\System.Web.WebPages.xml
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\System.Web.WebPages.Deployment.xml
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\System.Web.WebPages.Razor.xml
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\Antlr3.Runtime.pdb
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\es\System.Web.Helpers.resources.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\es\System.Web.Mvc.resources.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\es\System.Web.Optimization.resources.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\es\System.Web.Razor.resources.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\es\System.Web.WebPages.resources.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\obj\Debug\Zoodex.csproj.CoreCompileInputs.cache
+D:\Biblioteca\Documentos\Projects\Zoodex\obj\Debug\Zoodex.csproj.CopyComplete
+D:\Biblioteca\Documentos\Projects\Zoodex\obj\Debug\Zoodex.dll
+D:\Biblioteca\Documentos\Projects\Zoodex\obj\Debug\Zoodex.pdb
+D:\Biblioteca\Documentos\Projects\Zoodex\obj\Debug\Zoodex.csproj.AssemblyReference.cache

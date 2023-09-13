@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Zoodex_ModelStoreContainer" CdmEntityContainer="Zoodex_Entities">
+    <EntitySetMapping Name="Analyses">
+      <EntityTypeMapping TypeName="Zoodex_Model.Analyses">
+        <MappingFragment StoreEntitySet="Analyses">
+          <ScalarProperty Name="PKAnalysisID" ColumnName="PKAnalysisID" />
+          <ScalarProperty Name="FKReptileID" ColumnName="FKReptileID" />
+          <ScalarProperty Name="FKUserID" ColumnName="FKUserID" />
+          <ScalarProperty Name="FKPictureID" ColumnName="FKPictureID" />
+          <ScalarProperty Name="FKUpdatedBy" ColumnName="FKUpdatedBy" />
+          <ScalarProperty Name="Reliability" ColumnName="Reliability" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Files">
+      <EntityTypeMapping TypeName="Zoodex_Model.Files">
+        <MappingFragment StoreEntitySet="Files">
+          <ScalarProperty Name="PKFIleID" ColumnName="PKFIleID" />
+          <ScalarProperty Name="FKUpdatedBy" ColumnName="FKUpdatedBy" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="Zoodex_Model.Logs">
+        <MappingFragment StoreEntitySet="Logs">
+          <ScalarProperty Name="PKLogID" ColumnName="PKLogID" />
+          <ScalarProperty Name="FKUser" ColumnName="FKUser" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="HostName" ColumnName="HostName" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="Zoodex_Model.Posts">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="PKPostID" ColumnName="PKPostID" />
+          <ScalarProperty Name="FKPicture" ColumnName="FKPicture" />
+          <ScalarProperty Name="FKUpdatedBy" ColumnName="FKUpdatedBy" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reptiles">
+      <EntityTypeMapping TypeName="Zoodex_Model.Reptiles">
+        <MappingFragment StoreEntitySet="Reptiles">
+          <ScalarProperty Name="PKReptileID" ColumnName="PKReptileID" />
+          <ScalarProperty Name="FKPicture" ColumnName="FKPicture" />
+          <ScalarProperty Name="FKUpdatedBy" ColumnName="FKUpdatedBy" />
+          <ScalarProperty Name="Specie" ColumnName="Specie" />
+          <ScalarProperty Name="Subspecie" ColumnName="Subspecie" />
+          <ScalarProperty Name="CommonName" ColumnName="CommonName" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReptilesPosts">
+      <EntityTypeMapping TypeName="Zoodex_Model.ReptilesPosts">
+        <MappingFragment StoreEntitySet="ReptilesPosts">
+          <ScalarProperty Name="PKReptilePostID" ColumnName="PKReptilePostID" />
+          <ScalarProperty Name="FKReptileID" ColumnName="FKReptileID" />
+          <ScalarProperty Name="FKPostID" ColumnName="FKPostID" />
+          <ScalarProperty Name="FKUpdatedBy" ColumnName="FKUpdatedBy" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="Zoodex_Model.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="PKRoleID" ColumnName="PKRoleID" />
+          <ScalarProperty Name="SystemRights" ColumnName="SystemRights" />
+          <ScalarProperty Name="FKUpdatedBy" ColumnName="FKUpdatedBy" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Zoodex_Model.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="PKUserID" ColumnName="PKUserID" />
+          <ScalarProperty Name="FKProfilePicture" ColumnName="FKProfilePicture" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="Verified" ColumnName="Verified" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersRoles">
+      <EntityTypeMapping TypeName="Zoodex_Model.UsersRoles">
+        <MappingFragment StoreEntitySet="UsersRoles">
+          <ScalarProperty Name="PKUserRoleID" ColumnName="PKUserRoleID" />
+          <ScalarProperty Name="FKUserID" ColumnName="FKUserID" />
+          <ScalarProperty Name="FKRoleID" ColumnName="FKRoleID" />
+          <ScalarProperty Name="FKUpdatedBy" ColumnName="FKUpdatedBy" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAyN9zYbQt0U6TH56enmEtEQAAAAACAAAAAAAQZgAAAAEAACAAAACj1Xqn0ZCUB/Ob+aBEOHsjZQjvTZ1GxHBSNZ4f8YMAeQAAAAAOgAAAAAIAACAAAAB1kKlhpOv/uaBNpiTo9SEuH0aDXBx0t8t3AMAQ25xbWoAAAAAWYVYnVCHVmGCc7ZCvApwpdLCnKBT1wn1oURbBdJ0Nr+AVDx4YYtPCumv4uAuDsOlQNpb91q/ffTbOlxIjYk5SNl50pPTL/PTe9Qt0nnc7yiQB/eHwh+xOwQfXOjlANNcvw8UEV0nYcdm8crp2bji40rubLWyzWRUmBqRAkEgqaUAAAAADokvqa77l+/X0AxJXSS2n3lm01igIsEpGanYlSzo+XWGv9TciwFt+SJHiVdF7cS7F1pqPcwQ1nfQON42/t35W</EncryptedPassword>
+    <History>True|2022-05-03T05:29:56.1354427Z;True|2022-05-03T00:24:38.0696348-05:00;True|2022-05-03T00:14:23.1393709-05:00;True|2022-05-03T00:00:30.6429739-05:00;</History>
+  </PropertyGroup>
+</Project>

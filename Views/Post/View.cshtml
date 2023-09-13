@@ -1,0 +1,29 @@
+﻿@using Zoodex.Models
+@using Zoodex.Functions
+@{
+    ViewBag.Title = "View Post";
+}
+@{ PostModel post = (PostModel)ViewBag.Post; }
+<div class="container-fluid py-5 mt-5">
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-6 col-12 mb-4">
+            <div class="card">
+                <img src="https://localhost:44378/@post.Image" class="card-img-top mb-4" alt="Post @post.Id Image">
+                <div class="card-body">
+                    <h2 class="card-title mb-4">@post.Title</h2>
+                    <p class="card-text mb-4">@post.Content</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Created at @post.Created</small>
+                    <div class="d-flex float-end">
+                        <!-- Poner foto/nombre/comentarios de cada usuario -->
+                        <small class="text-muted me-2 mt-2">Created by </small>
+                        <img src="@Path.Combine(HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority),ImageHandler.GetProfilePicture(post.ProfileImageId))" alt="Profile picture" class="profile-picture rounded-circle">
+                        <div class="small text-muted ms-2 mt-2">@post.PostedBy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Repetir para cada post de usuario -->
+    </div>
+</div>

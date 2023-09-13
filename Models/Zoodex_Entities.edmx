@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Zoodex_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Analysis">
+          <Key>
+            <PropertyRef Name="PKAnalysisID" />
+          </Key>
+          <Property Name="PKAnalysisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FKReptileID" Type="int" Nullable="false" />
+          <Property Name="FKUserID" Type="int" Nullable="false" />
+          <Property Name="FKPictureID" Type="int" Nullable="false" />
+          <Property Name="FKUpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Reliability" Type="float" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Files">
+          <Key>
+            <PropertyRef Name="PKFileID" />
+          </Key>
+          <Property Name="PKFileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FKUpdatedBy" Type="int" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Path" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="PKLogID" />
+          </Key>
+          <Property Name="PKLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FKUser" Type="int" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Result" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="HostName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IP" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Posts">
+          <Key>
+            <PropertyRef Name="PKPostID" />
+          </Key>
+          <Property Name="PKPostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FKPicture" Type="int" />
+          <Property Name="FKUpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Content" Type="nvarchar" MaxLength="2500" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reptiles">
+          <Key>
+            <PropertyRef Name="PKReptileID" />
+          </Key>
+          <Property Name="PKReptileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FKPicture" Type="int" />
+          <Property Name="FKUpdatedBy" Type="int" />
+          <Property Name="Specie" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Subspecie" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="CommonName" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Family" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReptilesPosts">
+          <Key>
+            <PropertyRef Name="PKReptilePostID" />
+          </Key>
+          <Property Name="PKReptilePostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FKReptileID" Type="int" Nullable="false" />
+          <Property Name="FKPostID" Type="int" Nullable="false" />
+          <Property Name="FKUpdatedBy" Type="int" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="PKRoleID" />
+          </Key>
+          <Property Name="PKRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SystemRights" Type="int" Nullable="false" />
+          <Property Name="FKUpdatedBy" Type="int" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="PKUserID" />
+          </Key>
+          <Property Name="PKUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FKProfilePicture" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="Verified" Type="bit" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="Token" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="UsersRoles">
+          <Key>
+            <PropertyRef Name="PKUserRoleID" />
+          </Key>
+          <Property Name="PKUserRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FKUserID" Type="int" Nullable="false" />
+          <Property Name="FKRoleID" Type="int" Nullable="false" />
+          <Property Name="FKUpdatedBy" Type="int" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Analysis_Files">
+          <End Role="Files" Type="Self.Files" Multiplicity="1" />
+          <End Role="Analysis" Type="Self.Analysis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Files">
+              <PropertyRef Name="PKFileID" />
+            </Principal>
+            <Dependent Role="Analysis">
+              <PropertyRef Name="FKPictureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Analysis_Reptiles">
+          <End Role="Reptiles" Type="Self.Reptiles" Multiplicity="1" />
+          <End Role="Analysis" Type="Self.Analysis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reptiles">
+              <PropertyRef Name="PKReptileID" />
+            </Principal>
+            <Dependent Role="Analysis">
+              <PropertyRef Name="FKReptileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Analysis_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Analysis" Type="Self.Analysis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="PKUserID" />
+            </Principal>
+            <Dependent Role="Analysis">
+              <PropertyRef Name="FKUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Logs_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Logs" Type="Self.Logs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="PKUserID" />
+            </Principal>
+            <Dependent Role="Logs">
+              <PropertyRef Name="FKUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Posts_Files">
+          <End Role="Files" Type="Self.Files" Multiplicity="0..1" />
+          <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Files">
+              <PropertyRef Name="PKFileID" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="FKPicture" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reptiles_Files">
+          <End Role="Files" Type="Self.Files" Multiplicity="0..1" />
+          <End Role="Reptiles" Type="Self.Reptiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Files">
+              <PropertyRef Name="PKFileID" />
+            </Principal>
+            <Dependent Role="Reptiles">
+              <PropertyRef Name="FKPicture" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReptilesPosts_Posts">
+          <End Role="Posts" Type="Self.Posts" Multiplicity="1" />
+          <End Role="ReptilesPosts" Type="Self.ReptilesPosts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Posts">
+              <PropertyRef Name="PKPostID" />
+            </Principal>
+            <Dependent Role="ReptilesPosts">
+              <PropertyRef Name="FKPostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReptilesPosts_Reptiles">
+          <End Role="Reptiles" Type="Self.Reptiles" Multiplicity="1" />
+          <End Role="ReptilesPosts" Type="Self.ReptilesPosts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reptiles">
+              <PropertyRef Name="PKReptileID" />
+            </Principal>
+            <Dependent Role="ReptilesPosts">
+              <PropertyRef Name="FKReptileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Files">
+          <End Role="Files" Type="Self.Files" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Files">
+              <PropertyRef Name="PKFileID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="FKProfilePicture" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersRoles_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="UsersRoles" Type="Self.UsersRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="PKRoleID" />
+            </Principal>
+            <Dependent Role="UsersRoles">
+              <PropertyRef Name="FKRoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersRoles_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UsersRoles" Type="Self.UsersRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="PKUserID" />
+            </Principal>
+            <Dependent Role="UsersRoles">
+              <PropertyRef Name="FKUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Zoodex_ModelStoreContainer">
+          <EntitySet Name="Analysis" EntityType="Self.Analysis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reptiles" EntityType="Self.Reptiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReptilesPosts" EntityType="Self.ReptilesPosts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersRoles" EntityType="Self.UsersRoles" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Analysis_Files" Association="Self.FK_Analysis_Files">
+            <End Role="Files" EntitySet="Files" />
+            <End Role="Analysis" EntitySet="Analysis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Analysis_Reptiles" Association="Self.FK_Analysis_Reptiles">
+            <End Role="Reptiles" EntitySet="Reptiles" />
+            <End Role="Analysis" EntitySet="Analysis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Analysis_Users" Association="Self.FK_Analysis_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Analysis" EntitySet="Analysis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Logs_Users" Association="Self.FK_Logs_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Logs" EntitySet="Logs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Posts_Files" Association="Self.FK_Posts_Files">
+            <End Role="Files" EntitySet="Files" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reptiles_Files" Association="Self.FK_Reptiles_Files">
+            <End Role="Files" EntitySet="Files" />
+            <End Role="Reptiles" EntitySet="Reptiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReptilesPosts_Posts" Association="Self.FK_ReptilesPosts_Posts">
+            <End Role="Posts" EntitySet="Posts" />
+            <End Role="ReptilesPosts" EntitySet="ReptilesPosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReptilesPosts_Reptiles" Association="Self.FK_ReptilesPosts_Reptiles">
+            <End Role="Reptiles" EntitySet="Reptiles" />
+            <End Role="ReptilesPosts" EntitySet="ReptilesPosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Files" Association="Self.FK_Users_Files">
+            <End Role="Files" EntitySet="Files" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersRoles_Roles" Association="Self.FK_UsersRoles_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UsersRoles" EntitySet="UsersRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersRoles_Users" Association="Self.FK_UsersRoles_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UsersRoles" EntitySet="UsersRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Zoodex_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Analysis">
+          <Key>
+            <PropertyRef Name="PKAnalysisID" />
+          </Key>
+          <Property Name="PKAnalysisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FKReptileID" Type="Int32" Nullable="false" />
+          <Property Name="FKUserID" Type="Int32" Nullable="false" />
+          <Property Name="FKPictureID" Type="Int32" Nullable="false" />
+          <Property Name="FKUpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Reliability" Type="Double" Nullable="false" />
+          <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Files" Relationship="Self.FK_Analysis_Files" FromRole="Analysis" ToRole="Files" />
+          <NavigationProperty Name="Reptiles" Relationship="Self.FK_Analysis_Reptiles" FromRole="Analysis" ToRole="Reptiles" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Analysis_Users" FromRole="Analysis" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Files">
+          <Key>
+            <PropertyRef Name="PKFileID" />
+          </Key>
+          <Property Name="PKFileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FKUpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Path" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Analysis" Relationship="Self.FK_Analysis_Files" FromRole="Files" ToRole="Analysis" />
+          <NavigationProperty Name="Posts" Relationship="Self.FK_Posts_Files" FromRole="Files" ToRole="Posts" />
+          <NavigationProperty Name="Reptiles" Relationship="Self.FK_Reptiles_Files" FromRole="Files" ToRole="Reptiles" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Users_Files" FromRole="Files" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="PKLogID" />
+          </Key>
+          <Property Name="PKLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FKUser" Type="Int32" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="Result" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HostName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Logs_Users" FromRole="Logs" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Posts">
+          <Key>
+            <PropertyRef Name="PKPostID" />
+          </Key>
+          <Property Name="PKPostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FKPicture" Type="Int32" />
+          <Property Name="FKUpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Files" Relationship="Self.FK_Posts_Files" FromRole="Posts" ToRole="Files" />
+          <NavigationProperty Name="ReptilesPosts" Relationship="Self.FK_ReptilesPosts_Posts" FromRole="Posts" ToRole="ReptilesPosts" />
+        </EntityType>
+        <EntityType Name="Reptiles">
+          <Key>
+            <PropertyRef Name="PKReptileID" />
+          </Key>
+          <Property Name="PKReptileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FKPicture" Type="Int32" />
+          <Property Name="FKUpdatedBy" Type="Int32" />
+          <Property Name="Specie" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Subspecie" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CommonName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Family" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Analysis" Relationship="Self.FK_Analysis_Reptiles" FromRole="Reptiles" ToRole="Analysis" />
+          <NavigationProperty Name="Files" Relationship="Self.FK_Reptiles_Files" FromRole="Reptiles" ToRole="Files" />
+          <NavigationProperty Name="ReptilesPosts" Relationship="Self.FK_ReptilesPosts_Reptiles" FromRole="Reptiles" ToRole="ReptilesPosts" />
+        </EntityType>
+        <EntityType Name="ReptilesPosts">
+          <Key>
+            <PropertyRef Name="PKReptilePostID" />
+          </Key>
+          <Property Name="PKReptilePostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FKReptileID" Type="Int32" Nullable="false" />
+          <Property Name="FKPostID" Type="Int32" Nullable="false" />
+          <Property Name="FKUpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Posts" Relationship="Self.FK_ReptilesPosts_Posts" FromRole="ReptilesPosts" ToRole="Posts" />
+          <NavigationProperty Name="Reptiles" Relationship="Self.FK_ReptilesPosts_Reptiles" FromRole="ReptilesPosts" ToRole="Reptiles" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="PKRoleID" />
+          </Key>
+          <Property Name="PKRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SystemRights" Type="Int32" Nullable="false" />
+          <Property Name="FKUpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="RoleName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="UsersRoles" Relationship="Self.FK_UsersRoles_Roles" FromRole="Roles" ToRole="UsersRoles" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="PKUserID" />
+          </Key>
+          <Property Name="PKUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FKProfilePicture" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Verified" Type="Boolean" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="Token" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Analysis" Relationship="Self.FK_Analysis_Users" FromRole="Users" ToRole="Analysis" />
+          <NavigationProperty Name="Files" Relationship="Self.FK_Users_Files" FromRole="Users" ToRole="Files" />
+          <NavigationProperty Name="Logs" Relationship="Self.FK_Logs_Users" FromRole="Users" ToRole="Logs" />
+          <NavigationProperty Name="UsersRoles" Relationship="Self.FK_UsersRoles_Users" FromRole="Users" ToRole="UsersRoles" />
+        </EntityType>
+        <EntityType Name="UsersRoles">
+          <Key>
+            <PropertyRef Name="PKUserRoleID" />
+          </Key>
+          <Property Name="PKUserRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FKUserID" Type="Int32" Nullable="false" />
+          <Property Name="FKRoleID" Type="Int32" Nullable="false" />
+          <Property Name="FKUpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Roles" Relationship="Self.FK_UsersRoles_Roles" FromRole="UsersRoles" ToRole="Roles" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_UsersRoles_Users" FromRole="UsersRoles" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_Analysis_Files">
+          <End Role="Files" Type="Self.Files" Multiplicity="1" />
+          <End Role="Analysis" Type="Self.Analysis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Files">
+              <PropertyRef Name="PKFileID" />
+            </Principal>
+            <Dependent Role="Analysis">
+              <PropertyRef Name="FKPictureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Analysis_Reptiles">
+          <End Role="Reptiles" Type="Self.Reptiles" Multiplicity="1" />
+          <End Role="Analysis" Type="Self.Analysis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reptiles">
+              <PropertyRef Name="PKReptileID" />
+            </Principal>
+            <Dependent Role="Analysis">
+              <PropertyRef Name="FKReptileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Analysis_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Analysis" Type="Self.Analysis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="PKUserID" />
+            </Principal>
+            <Dependent Role="Analysis">
+              <PropertyRef Name="FKUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Posts_Files">
+          <End Role="Files" Type="Self.Files" Multiplicity="0..1" />
+          <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Files">
+              <PropertyRef Name="PKFileID" />
+            </Principal>
+            <Dependent Role="Posts">
+              <PropertyRef Name="FKPicture" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reptiles_Files">
+          <End Role="Files" Type="Self.Files" Multiplicity="0..1" />
+          <End Role="Reptiles" Type="Self.Reptiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Files">
+              <PropertyRef Name="PKFileID" />
+            </Principal>
+            <Dependent Role="Reptiles">
+              <PropertyRef Name="FKPicture" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Files">
+          <End Role="Files" Type="Self.Files" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Files">
+              <PropertyRef Name="PKFileID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="FKProfilePicture" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Logs_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Logs" Type="Self.Logs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="PKUserID" />
+            </Principal>
+            <Dependent Role="Logs">
+              <PropertyRef Name="FKUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReptilesPosts_Posts">
+          <End Role="Posts" Type="Self.Posts" Multiplicity="1" />
+          <End Role="ReptilesPosts" Type="Self.ReptilesPosts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Posts">
+              <PropertyRef Name="PKPostID" />
+            </Principal>
+            <Dependent Role="ReptilesPosts">
+              <PropertyRef Name="FKPostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReptilesPosts_Reptiles">
+          <End Role="Reptiles" Type="Self.Reptiles" Multiplicity="1" />
+          <End Role="ReptilesPosts" Type="Self.ReptilesPosts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reptiles">
+              <PropertyRef Name="PKReptileID" />
+            </Principal>
+            <Dependent Role="ReptilesPosts">
+              <PropertyRef Name="FKReptileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersRoles_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="UsersRoles" Type="Self.UsersRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="PKRoleID" />
+            </Principal>
+            <Dependent Role="UsersRoles">
+              <PropertyRef Name="FKRoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersRoles_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UsersRoles" Type="Self.UsersRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="PKUserID" />
+            </Principal>
+            <Dependent Role="UsersRoles">
+              <PropertyRef Name="FKUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Zoodex_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Analysis" EntityType="Self.Analysis" />
+          <EntitySet Name="Files" EntityType="Self.Files" />
+          <EntitySet Name="Logs" EntityType="Self.Logs" />
+          <EntitySet Name="Posts" EntityType="Self.Posts" />
+          <EntitySet Name="Reptiles" EntityType="Self.Reptiles" />
+          <EntitySet Name="ReptilesPosts" EntityType="Self.ReptilesPosts" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="UsersRoles" EntityType="Self.UsersRoles" />
+          <AssociationSet Name="FK_Analysis_Files" Association="Self.FK_Analysis_Files">
+            <End Role="Files" EntitySet="Files" />
+            <End Role="Analysis" EntitySet="Analysis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Analysis_Reptiles" Association="Self.FK_Analysis_Reptiles">
+            <End Role="Reptiles" EntitySet="Reptiles" />
+            <End Role="Analysis" EntitySet="Analysis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Analysis_Users" Association="Self.FK_Analysis_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Analysis" EntitySet="Analysis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Posts_Files" Association="Self.FK_Posts_Files">
+            <End Role="Files" EntitySet="Files" />
+            <End Role="Posts" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reptiles_Files" Association="Self.FK_Reptiles_Files">
+            <End Role="Files" EntitySet="Files" />
+            <End Role="Reptiles" EntitySet="Reptiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Files" Association="Self.FK_Users_Files">
+            <End Role="Files" EntitySet="Files" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Logs_Users" Association="Self.FK_Logs_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Logs" EntitySet="Logs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReptilesPosts_Posts" Association="Self.FK_ReptilesPosts_Posts">
+            <End Role="Posts" EntitySet="Posts" />
+            <End Role="ReptilesPosts" EntitySet="ReptilesPosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReptilesPosts_Reptiles" Association="Self.FK_ReptilesPosts_Reptiles">
+            <End Role="Reptiles" EntitySet="Reptiles" />
+            <End Role="ReptilesPosts" EntitySet="ReptilesPosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersRoles_Roles" Association="Self.FK_UsersRoles_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UsersRoles" EntitySet="UsersRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersRoles_Users" Association="Self.FK_UsersRoles_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UsersRoles" EntitySet="UsersRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Zoodex_ModelStoreContainer" CdmEntityContainer="Zoodex_Entities">
+          <EntitySetMapping Name="Analysis">
+            <EntityTypeMapping TypeName="Zoodex_Model.Analysis">
+              <MappingFragment StoreEntitySet="Analysis">
+                <ScalarProperty Name="PKAnalysisID" ColumnName="PKAnalysisID" />
+                <ScalarProperty Name="FKReptileID" ColumnName="FKReptileID" />
+                <ScalarProperty Name="FKUserID" ColumnName="FKUserID" />
+                <ScalarProperty Name="FKPictureID" ColumnName="FKPictureID" />
+                <ScalarProperty Name="FKUpdatedBy" ColumnName="FKUpdatedBy" />
+                <ScalarProperty Name="Reliability" ColumnName="Reliability" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Files">
+            <EntityTypeMapping TypeName="Zoodex_Model.Files">
+              <MappingFragment StoreEntitySet="Files">
+                <ScalarProperty Name="PKFileID" ColumnName="PKFileID" />
+                <ScalarProperty Name="FKUpdatedBy" ColumnName="FKUpdatedBy" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="Zoodex_Model.Logs">
+              <MappingFragment StoreEntitySet="Logs">
+                <ScalarProperty Name="PKLogID" ColumnName="PKLogID" />
+                <ScalarProperty Name="FKUser" ColumnName="FKUser" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="HostName" ColumnName="HostName" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Posts">
+            <EntityTypeMapping TypeName="Zoodex_Model.Posts">
+              <MappingFragment StoreEntitySet="Posts">
+                <ScalarProperty Name="PKPostID" ColumnName="PKPostID" />
+                <ScalarProperty Name="FKPicture" ColumnName="FKPicture" />
+                <ScalarProperty Name="FKUpdatedBy" ColumnName="FKUpdatedBy" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reptiles">
+            <EntityTypeMapping TypeName="Zoodex_Model.Reptiles">
+              <MappingFragment StoreEntitySet="Reptiles">
+                <ScalarProperty Name="PKReptileID" ColumnName="PKReptileID" />
+                <ScalarProperty Name="FKPicture" ColumnName="FKPicture" />
+                <ScalarProperty Name="FKUpdatedBy" ColumnName="FKUpdatedBy" />
+                <ScalarProperty Name="Specie" ColumnName="Specie" />
+                <ScalarProperty Name="Subspecie" ColumnName="Subspecie" />
+                <ScalarProperty Name="CommonName" ColumnName="CommonName" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReptilesPosts">
+            <EntityTypeMapping TypeName="Zoodex_Model.ReptilesPosts">
+              <MappingFragment StoreEntitySet="ReptilesPosts">
+                <ScalarProperty Name="PKReptilePostID" ColumnName="PKReptilePostID" />
+                <ScalarProperty Name="FKReptileID" ColumnName="FKReptileID" />
+                <ScalarProperty Name="FKPostID" ColumnName="FKPostID" />
+                <ScalarProperty Name="FKUpdatedBy" ColumnName="FKUpdatedBy" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="Zoodex_Model.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="PKRoleID" ColumnName="PKRoleID" />
+                <ScalarProperty Name="SystemRights" ColumnName="SystemRights" />
+                <ScalarProperty Name="FKUpdatedBy" ColumnName="FKUpdatedBy" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Zoodex_Model.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="PKUserID" ColumnName="PKUserID" />
+                <ScalarProperty Name="FKProfilePicture" ColumnName="FKProfilePicture" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="Verified" ColumnName="Verified" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersRoles">
+            <EntityTypeMapping TypeName="Zoodex_Model.UsersRoles">
+              <MappingFragment StoreEntitySet="UsersRoles">
+                <ScalarProperty Name="PKUserRoleID" ColumnName="PKUserRoleID" />
+                <ScalarProperty Name="FKUserID" ColumnName="FKUserID" />
+                <ScalarProperty Name="FKRoleID" ColumnName="FKRoleID" />
+                <ScalarProperty Name="FKUpdatedBy" ColumnName="FKUpdatedBy" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

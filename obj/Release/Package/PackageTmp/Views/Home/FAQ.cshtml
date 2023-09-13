@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "FAQ";
+}
+
+<div class="container-fluid my-5 py-5">
+    <div class="container bg-white shadow-lg rounded-3 my-5 py-3">
+        <div class="text-center pt-5 mb-5">
+            <h1 class="text-center fw-bold mb-4">
+                Frequent questions
+            </h1>
+            <p class="text-green fw-bold leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
+                What you need to know about Zoodex is here.
+            </p>
+        </div>
+        <div class="flex flex-wrap">
+            <div class="w-full lg:w-1/2 px-5 py-2">
+                <details class="mb-4">
+                    <summary class="fw-bold question-bg-green-light text-white rounded-3 py-2 px-4">
+                        Do I need to register to use Zoodex?
+                    </summary>
+
+                    <span class="px-4 py-2 mt-5">
+                        Yes, you need to have an account with us before you can start
+                        to analyze reptiles using Zoodex. You can create your account <a href="@Url.Action("Register", "Access")" class="green-light-text text-decoration-none button-hover"> <strong>here</strong></a>
+                        and then sign in to get started.
+                    </span>
+                </details>
+                <details class="mb-4">
+                    <summary class="fw-bold question-bg-green-light text-white rounded-3 py-2 px-4">
+                        What kind of animals can be tested using Zoodex?
+                    </summary>
+
+                    <span class="px-4 py-2">
+                        Currently Zoodex only allows the analysis of reptiles. From a little
+                        lizard to the dreaded crocodile can be analyzed with Zoodex!
+                    </span>
+                </details>
+                <details class="mb-4">
+                    <summary class="fw-bold question-bg-green-light text-white rounded-3 py-2 px-4">
+                        What kind of information will I get using Zoodex?
+                    </summary>
+
+                    <span class="px-4 py-2">
+                        Zoodex provides information the following information about the species
+                        identified such as species, gender, average size, average weight,
+                        habitat among others.
+                    </span>
+                </details>
+                <details class="mb-4">
+                    <summary class="fw-bold question-bg-green-light text-white rounded-3 py-2 px-4">
+                        How does Zoodex know which reptile is in my image?
+                    </summary>
+
+                    <span class="px-4 py-2">
+                        Zoodex uses Artificial Intelligence algorithms that allow us to
+                        know which is the reptile using only a picture.
+                    </span>
+                </details>
+                <details class="mb-4">
+                    <summary class="fw-bold question-bg-green-light text-white rounded-3 py-2 px-4">
+                        Can I delete my account when I don't need to use Zoodex?
+                    </summary>
+
+                    <span class="px-4 py-2">
+                        We would like you to stay with us longer, but if
+                        you think it is better to delete your account you can always do it
+                        accessing your profile and clicking on "Delete my account".
+                    </span>
+                </details>
+                <details class="mb-4">
+                    <summary class="fw-bold question-bg-green-light text-white rounded-3 py-2 px-4">
+                        Where can I contact you if I have more questions?
+                    </summary>
+
+                    <span class="px-4 py-2">
+                        If you have any additional questions, send an email to the team of
+                        Zoodex at: <a href="mailto:proyecto.zoodex@gmail.com" class="green-light-text text-decoration-none button-hover">proyecto.zoodex@gmail.com</a>
+                    </span>
+                </details>
+            </div>
+        </div>
+    </div>
+</div>
+

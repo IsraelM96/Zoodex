@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "About Us";
+}
+
+<div class="container-fluid my-5 py-5">
+    <div class="container bg-white shadow-lg rounded-3 mt-5 py-3">
+        <div class="row mx-2 my-5">
+            <div class="col-lg-6 ">
+                <img alt="card img" class="rounded-3 img-fluid" src="~/Resources/Images/main-header.png">
+            </div>
+            <div class="col-lg-6 d-flex flex-column justify-contents-center">
+                <div class="content pt-4 pt-lg-0">
+                    <h2 class="fw-bold green-light-text">
+                        A tool that helps you explore
+                    </h2>
+                    <p class="fst-italic fs-5 mt-4 green-light-text">
+                        Zoodex is a tool that allows you to easily and reliably identify all kinds of reptile species,
+                        with the purpose of facilitating your work through easy access to information on said species.
+                    </p>
+                    <ul>
+                        <li class="fs-6 green-light-text">
+                            <i class="fa-solid fa-mobile-alt"></i> Access from your preferred device.
+                        </li>
+                        <li class="fs-6 green-light-text">
+                            <i class="fa-solid fa-staff-aesculapius"></i> Learn about reptiles.
+                        </li>
+                        <li class="fs-6 green-light-text">
+                            <i class="fa-solid fa-person"></i> Share your discoveries with more users.
+                        </li>
+                    </ul>
+                </div>
+                <a href="@Url.Action("Register", "Access")" class="fs-3 p-2 btn bg-green fw-bold text-white rounded border-2 border-transparent button-hover" role="button">
+                    Register now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-white green-light-text shadow-lg rounded-3 my-5 py-3">
+        <div class="section-title pb-5 text-center">
+            <h2 class="fw-bold">
+                Know our values.
+            </h2>
+            <p class="fs-5">
+                At Zoodex we want users to obtain reliable information about reptiles. 
+                That is why we base ourselves on the following values.
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="pb-5">
+                    <div class="pic pb-3 "><img src="~/Resources/Images/Mission.png" class="img-fluid rounded-circle border border-5 border-success" alt=""></div>
+                    <div class="mx-auto text-center">
+                        <h4 class="fw-bold">Mission</h4>
+                        <span>
+                            Provide a tool that allows the taxonomic analysis of reptile species.
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="member">
+                    <div class="pic pb-3"><img src="~/Resources/Images/Vision.png" class="img-fluid rounded-circle border border-5 border-success" alt=""></div>
+                    <div class="mx-auto text-center">
+                        <h4 class="fw-bold">Vision</h4>
+                        <span>
+                            Give results that help Zoodex users to research.
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="member">
+                    <div class="pic pb-3"><img src="~/Resources/Images/Objective.png" class="img-fluid rounded-circle border border-5 border-success" alt=""></div>
+                    <div class="mx-auto text-center">
+                        <h4 class="fw-bold">Objectives</h4>
+                        <span>
+                            Provide a tool that allows the taxonomic analysis of reptile species.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Log In";
+}
+
+<div class="container bg-login rounded shadow w-75 mb-3">
+    <div class="row align-items-stretch">
+        <div class="col bg-login-image d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded"></div>
+        <div class="col bg-white p-5 rounded-end">
+            <div class="text-center">
+                <img src="favicon.ico" class="fa-rotate-90" width="48" alt="Logo"/>
+            </div>
+            <h2 class="fw-bold text-center">Welcome</h2>
+            <form class="needs-validation" method="post" action="@Url.Action("Accessed", "Access")" novalidate>
+                <div class="mb-4">
+                    <label for="email" class="form-label green-light-text">Email:</label>
+                    <input type="email" class="form-control rounded shadow-sm" name="email" id="email" required>
+                    <div class="invalid-feedback">
+                        Please input email
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="form-label green-light-text">Password:</label>
+                    <input type="password" class="form-control rounded shadow-sm" name="password" id="password" required>
+                    <div class="invalid-feedback" id="passwordFeedback">
+                        Please input password
+                    </div>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn bg-green button-hover rounded shadow-sm text-white">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i> Log In
+                    </button>
+                </div>
+                <div class="my-3">
+                    <span class="green-light-text">You do not have an account?<a href="@Url.Action("Register","Access")" class="green-light-text button-hover"> Register</a></span><br />
+                    <span><a href="@Url.Action("Recover","Access")" class="green-light-text button-hover">Recover password</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            var forms = $(".needs-validation");
+
+            if ("@TempData["Errors"]" != "") {
+                new Toast({
+                    message: "@TempData["Errors"]",
+                    type: "danger"
+                });
+            }
+            else if ("@TempData["Success"]" != "") {
+                new Toast({
+                    message: "@TempData["Success"]",
+                    type: "success"
+                });
+            }
+
+            $.each(forms, function (_, form) {
+                $(form).on("submit", function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    $(form).addClass("was-validated");
+                });
+            });
+        });
+    </script>
+} 

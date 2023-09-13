@@ -1,0 +1,186 @@
+﻿@using Zoodex.Models
+@using Zoodex.Functions
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+@{ Users user = (Users)Session["User"]; }
+<section class="container-fluid pt-5 mt-5">
+    <div class="container-xl px-4 mt-4">
+        <div class="row">
+            <div class="col-xl-4">
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-0">
+                    <div class="card-header">Profile Picture</div>
+                    <div class="card-body text-center">
+                        <form class="needs-validation" method="post" action="@Url.Action("UpdateProfilePicture", "User")" enctype="multipart/form-data" id="imageForm" novalidate>
+                            <!-- Profile picture image-->
+                            <img class="img-account-profile mb-2" src="@Path.Combine(HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority),ImageHandler.GetProfilePicture(user.FKProfilePicture))" alt="profile picture" id="profilePicture">
+                            <!-- Profile picture help block-->
+                            <div class="small font-italic text-muted mb-4">Select your profile image</div>
+                            <!-- Profile picture input-->
+                            <input type="file" class="form-control rounded shadow-sm" name="image" id="image" accept="image/*" required>
+                            <div class="invalid-feedback">
+                                Please input image
+                            </div>
+                            <!-- Profile picture upload button-->
+                            <button class="btn btn-primary mt-4" type="submit">Save changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">Account Details</div>
+                    <div class="card-body py-3 my-3">
+                        <form class="needs-validation" method="post" action="@Url.Action("UpdateInformation", "User")" id="informationForm" novalidate>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (first name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="name"><strong class="text-danger">*</strong> First name</label>
+                                    <input class="form-control" id="name" name="name" type="text" placeholder="Enter your first name" value="@user.Name" required>
+                                    <div class="invalid-feedback">
+                                        Please input name
+                                    </div>
+                                </div>
+                                <!-- Form Group (last name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="lastName"><strong class="text-danger">*</strong> Last name</label>
+                                    <input class="form-control" id="lastName" name="lastName" type="text" placeholder="Enter your last name" value="@user.LastName" required>
+                                    <div class="invalid-feedback">
+                                        Please input last name
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (first name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="email">Email</label>
+                                    @if (RoleHandler.GetRole(user.PKUserID) == "Admin")
+                                    {
+                                        <input class="form-control" id="email" name="email" type="email" value="@user.Email">
+                                    }
+                                    else
+                                    {
+                                        <input class="form-control" id="email" name="email" type="email" disabled value="@user.Email">
+                                    }
+                                </div>
+                                <!-- Form Group (last name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="rol">Rol</label>
+                                    @if (RoleHandler.GetRole(user.PKUserID) == "Admin")
+                                    {
+                                        <select class="form-control" id="rol" name="rol" value="@RoleHandler.GetRoleId(user.PKUserID)">
+                                            <option value="1">Standard</option>
+                                            <option value="2">Admin</option>
+                                        </select>
+                                    }
+                                    else
+                                    {
+                                        <select class="form-control" id="rol" name="rol" disabled value="@RoleHandler.GetRoleId(user.PKUserID)">
+                                            <option value="1">Standard</option>
+                                            <option value="2">Admin</option>
+                                        </select>
+                                    }
+                                </div>
+                            </div>
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (first name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="password"><strong class="text-danger">*</strong> Password</label>
+                                    <input class="form-control" id="password" name="password" type="password" placeholder="Enter your password" required>
+                                    <div class="invalid-feedback">
+                                        Please input password
+                                    </div>
+                                </div>
+                                <!-- Form Group (last name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="repassword"><strong class="text-danger">*</strong> Confirm Password</label>
+                                    <input class="form-control" id="repassword" name="repassword" type="password" placeholder="Confirm your password" required>
+                                    <div class="invalid-feedback">
+                                        Please input password confirmation
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Save changes button-->
+                            <button class="btn btn-primary" type="submit">Save changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            if ("@TempData["Errors"]" != "") {
+                new Toast({
+                    message: "@TempData["Errors"]",
+                    type: "danger"
+                });
+            }
+            else if ("@TempData["Success"]" != "") {
+                new Toast({
+                    message: "@TempData["Success"]",
+                    type: "success"
+                });
+            }
+
+            $("#rol").val("@RoleHandler.GetRoleId(user.PKUserID)").trigger("change");
+
+            $("#imageForm").on("submit", function (event) {
+                if (!$("#imageForm")[0].checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                $("#imageForm").addClass("was-validated");
+            });
+
+            $("#informationForm").on("submit", function (event) {
+                if (!$("#informationForm")[0].checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                if ($("#password").val() != $("#repassword").val()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    new Toast({
+                        message: "Both passwords do not match",
+                        type: "danger"
+                    });
+                }
+                $("#informationForm").addClass("was-validated");
+            });
+
+            $("#image").change(function () {
+                var file = this.files[0];
+                var reader = new FileReader();
+
+                if (file == undefined) {
+                    $("#profilePicture").attr("src", "@ImageHandler.GetProfilePicture(user.FKProfilePicture)");
+                    return;
+                }
+                else {
+                    if (!file.type.match("image.*")) {
+                        $("#imagePreview").attr("src", "@ImageHandler.GetProfilePicture(user.FKProfilePicture)");
+                        return;
+                    }
+                }
+
+                reader.onload = (function (image) {
+                    return function (e) {
+                        $("#profilePicture").attr("src", e.target.result);
+                    };
+                })(file);
+
+                reader.readAsDataURL(file);
+            });
+        });
+    </script>    
+}

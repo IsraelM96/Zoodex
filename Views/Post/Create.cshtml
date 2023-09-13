@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "New Post";
+}
+
+<div class="container-fluid py-5">
+    <div class="container mt-5">
+        <h1 class="text-center pt-3 mt-5 mb-3">Create post</h1>
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-6">
+                <form class="needs-validation" method="post" action="@Url.Action("CreatePost", "Post")" enctype="multipart/form-data" novalidate>
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title" name="Title" required>
+                        <div class="invalid-feedback" id="passwordFeedback">
+                            Please input title
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Image</label>
+                        <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+                        <div class="invalid-feedback" id="passwordFeedback">
+                            Please input image
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <img src="" class="d-none" alt="Image preview" id="imagePreview" style="max-width: 100%; max-height: 360px;">
+                    </div>
+                    <div class="mb-3">
+                        <label for="content" class="form-label">Content</label>
+                        <textarea class="form-control" id="content" name="content" rows="10" required></textarea>
+                        <div class="invalid-feedback" id="passwordFeedback">
+                            Please input content
+                        </div>
+                    </div>
+                    <button type="submit" class="btn bg-green button-hover float-end rounded shadow-sm text-white">
+                        <i class="fa-solid fa-paper-plane"></i> Post
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            var forms = $(".needs-validation");
+
+            if ("@TempData["Errors"]" != "") {
+                new Toast({
+                    message: "@TempData["Errors"]",
+                    type: "danger"
+                });
+            }
+            else if ("@TempData["Success"]" != "") {
+                new Toast({
+                    message: "@TempData["Success"]",
+                    type: "success"
+                });
+            }
+
+            $.each(forms, function (_, form) {
+                $(form).on("submit", function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    $(form).addClass("was-validated");
+                });
+            });
+
+            $("#image").change(function () {
+                var file = this.files[0];
+                var reader = new FileReader();
+
+                if (file == undefined) {
+                    $("#imagePreview").addClass("d-none");
+                    $("#imagePreview").attr("src", "");
+                    return;
+                }
+                else {
+                    if (!file.type.match("image.*")) {
+                        $("#imagePreview").addClass("d-none");
+                        $("#imagePreview").attr("src", "");
+                        return;
+                    }
+                }
+                
+                reader.onload = (function (image) {
+                    return function (e) {
+                        $("#imagePreview").attr("src", e.target.result);
+                        $("#imagePreview").removeClass("d-none");
+                    };
+                })(file);
+
+                reader.readAsDataURL(file);
+            });
+        });
+    </script>
+} 

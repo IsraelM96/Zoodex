@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Reptiles";
+}
+
+<div class="row justify-content-center my-5 py-5 mx-0">
+    <div class="col-10 mt-5">
+        <div class="d-flex justify-content-center" id="loading">
+            <div class="spinner-border" role="status" style="width: 10rem; height: 10rem;">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        <table class="table table-striped table-bordered shadow-sm d-none" id="reptiles">
+            <thead>
+                <tr>
+                    <th>Specie</th>
+                    <th>Subspecie</th>
+                    <th>CommonName</th>
+                    <th>Family</th>
+                    <th>LastUpdated</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("GetFullReptiles", "Reptiles")",
+                data: {},
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    $.each(data, function (_, reptile) {
+                        reptile.LastUpdated = reptile.LastUpdated.split("(")[1].split(")")[0];
+                        reptile.LastUpdated = new Date(parseInt(reptile.LastUpdated)).toLocaleDateString("en-US", { day: "2-digit", month: "2-digit", year: "numeric" }) + " " + new Date(parseInt(reptile.LastUpdated)).toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true });
+                    });
+
+                    $("#reptiles").removeClass("d-none");
+                    $("#loading").addClass("d-none");
+
+                    $("#reptiles").DataTable({
+                        responsive: true,
+                        "data": data,
+                        "columns": [
+                            { "data": "Specie" },
+                            { "data": "Subspecie" },
+                            { "data": "CommonName" },
+                            { "data": "Family" },
+                            { "data": "LastUpdated" }],
+                        select: true,
+                    });
+                }
+            });
+        });
+    </script>
+}  

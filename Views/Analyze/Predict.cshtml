@@ -1,0 +1,56 @@
+﻿@using Zoodex.Models
+@{
+    ViewBag.Title = "Predict";
+}
+
+@{Reptiles reptile = (Reptiles)ViewBag.Reptile;
+    if (reptile == null)
+    {
+        reptile = new Reptiles();
+        reptile.Specie = "Unknown";
+        reptile.Subspecie = "Unknown";
+        reptile.CommonName = "Unknown";
+        reptile.Family = "Unknown";
+        reptile.Specie = "Unknown";
+    }
+ }
+<div class="container-fluid py-5 mt-5">
+    <div class="row justify-content-center mt-5">
+        <div class="col-12 col-lg-4">
+            <div class="card rounded shadow">
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-10 text-center">
+                            <img src="@ViewBag.Image" />
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 text-center border-bottom">
+                            <h2 class="card-title mb-4"><strong class="text-muted">Specie:</strong> @reptile.Specie</h2>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 text-center border-bottom">
+                            <label class="card-text mb-4"><strong class="text-muted">Subspecie:</strong> @reptile.Subspecie</label>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 text-center border-bottom">
+                            <label class="card-text mb-4"><strong class="text-muted">Common Name:</strong> @reptile.CommonName</label>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 text-center border-bottom">
+                            <label class="card-text mb-4"><strong class="text-muted">Family:</strong> @reptile.Family</label>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 text-center border-bottom">
+                            <label class="card-text mb-4"><strong class="text-muted">Confidence:</strong> @ViewBag.Confidence</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

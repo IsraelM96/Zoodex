@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Recover";
+}
+
+<div class="container-fluid mb-3">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card bg-login rounded shadow">
+                <div class="card-body">
+                    <div class="row align-items-stretch">
+                        <div class="col bg-white p-5 rounded-end">
+                            <div class="text-center">
+                                <img src="~/Resources/Images/favicon.ico" class="fa-rotate-90" width="48" alt="Logo" />
+                            </div>
+                            <h2 class="fw-bold text-center">Recover Password</h2>
+                            <form class="needs-validation" method="post" action="@Url.Action("ResetPassword", "Access")" novalidate>
+                                <div class="mb-4">
+                                    <label for="email" class="form-label green-light-text">Email:</label>
+                                    <input type="email" class="form-control rounded shadow-sm" name="email" id="email" required>
+                                    <div class="invalid-feedback">
+                                        Please input email
+                                    </div>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn bg-green button-hover rounded shadow-sm text-white">
+                                        <i class="fa-solid fa-paper-plane"></i> Send
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            var forms = $(".needs-validation");
+
+            if ("@TempData["Errors"]" != "") {
+                new Toast({
+                    message: "@TempData["Errors"]",
+                    type: "danger"
+                });
+            }
+            else if ("@TempData["Success"]" != "") {
+                new Toast({
+                    message: "@TempData["Success"]",
+                    type: "success"
+                });
+            }
+
+            $.each(forms, function (_, form) {
+                $(form).on("submit", function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    $(form).addClass("was-validated");
+                });
+            });
+        });
+    </script>
+}
