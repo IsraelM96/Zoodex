@@ -7,7 +7,7 @@ namespace Zoodex.Models
 {
     public class Predict
     {
-        public float Confidence { get; set; }
-        public string Specie { get; set; }
+        public float Probability { get; set; }
+        public string Prediction { get; set; }
     }
 }
