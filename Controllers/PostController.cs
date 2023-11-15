@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Zoodex.Models;
+using static System.Net.WebRequestMethods;
 
 namespace Zoodex.Controllers
 {
@@ -54,7 +55,7 @@ namespace Zoodex.Controllers
                     Context.Files.Add(new Files
                     {
                         FileName = fileName,
-                        Path = "Storage/Posts/" + fileName,
+                        Path = "https://zoodex.azurewebsites.net/Storage/Posts/" + fileName,
                         FKUpdatedBy = user.PKUserID,
                         LastUpdated = DateTime.Now,
                         Deleted = false

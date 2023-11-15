@@ -40,7 +40,7 @@ namespace Zoodex.Controllers
                         Context.Files.Add(new Files
                         {
                             FileName = fileName,
-                            Path = "Storage/Profile Pictures/" + fileName,
+                            Path = "https://zoodex.azurewebsites.net/Profile" + " Pictures/" + fileName,
                             FKUpdatedBy = user.PKUserID,
                             LastUpdated = DateTime.Now,
                             Deleted = false
