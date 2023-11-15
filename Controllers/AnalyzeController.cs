@@ -37,7 +37,7 @@ namespace Zoodex.Controllers
                     Reptiles reptile = Context.Reptiles.Where(a => a.Specie.Contains(predict.Prediction)).FirstOrDefault();
                     ViewBag.Reptile = reptile;
                     ViewBag.Confidence = predict.Probability + "%";
-                    ViewBag.Image = "https://localhost:44378/Storage/Analysis/" + currentFile.FileName;
+                    ViewBag.Image = "https://zoodex.azurewebsites.net/Storage/Analysis/" + currentFile.FileName;
                 }
 
             }
