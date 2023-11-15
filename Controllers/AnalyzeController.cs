@@ -24,10 +24,10 @@ namespace Zoodex.Controllers
             using (HttpClient httpClient = new HttpClient())
             {
                 HttpPostedFileBase currentFile = Request.Files[0];
-                string filePath = Path.Combine(HttpContext.Server.MapPath("https://zoodex.azurewebsites.net/Storage/Analysis"), currentFile.FileName);
+                string filePath = Path.Combine(HttpContext.Server.MapPath("~/Storage/Analysis"), currentFile.FileName);
                 currentFile.SaveAs(filePath);
 
-                HttpResponseMessage response = await httpClient.GetAsync("https://zoodex-cnn.onrender.com/predict/" + filePath);
+                HttpResponseMessage response = await httpClient.GetAsync("https://zoodex-cnn.onrender.com/predict/" + "https://zoodex.azurewebsites.net/Storage/Analysis/" + currentFile.FileName);
 
                 string responseJson = await response.Content.ReadAsStringAsync();
                 Predict predict = JsonConvert.DeserializeObject<Predict>(responseJson);
