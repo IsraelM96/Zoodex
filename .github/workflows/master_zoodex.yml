@@ -54,4 +54,4 @@ jobs:
           app-name: 'Zoodex'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_71DB8AA25FAF41F1AF5E764741E2DBB9 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_40FA7A1EF0A4435AA711FCDA9930DBB3 }}
